@@ -1,0 +1,145 @@
+// Reset Defaults
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+// Variables
+$firstcolor: #363A5D;
+$secondcolor: #D3D9DD;
+
+// Home
+.background {
+    width: 100%;
+    min-height: 100vh;
+    font-family: 'Comfortaa';
+    
+    .background-sections{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        
+        .section-left,.section-right{
+            background-color: $firstcolor;
+            flex: 1;
+            min-height: 100vh;
+            width: 50%;
+            min-width: 288px;
+
+            .add-item-wrapper{
+                width: 100%;
+                height: 15rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                
+                .add-item{
+                    width: 20%;
+                    height: 40%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    min-height: 100px;
+                    min-width: 100px;
+                    background-color: #191b2c;
+                    background-image: url(../img/coffee.svg);
+                    background-position: center;
+                    background-size: 80%;
+                    background-repeat: no-repeat;
+                    transform-style: preserve-3d;
+                    box-shadow: 0 20px 27px rgba(0, 0, 0, 0.35);
+                    transition: background-color 0.5s ease-in-out;
+                    cursor: pointer;
+
+                    .item-text{
+                        transform: translateZ(30px);
+                        pointer-events: none;
+                        text-align: center;
+                        font-size: 0.9rem;
+                        width: 100px;
+                        color: white;
+                        font-weight: bolder;
+                    }
+
+                }
+                .item-text-changed{
+                    background-color: #383c5f;
+                    transition: background-color 0.5s ease-in-out;
+                }
+
+            }
+
+            .item-list-wrapper{
+                .item-list{
+                    list-style: none;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    color: $secondcolor;
+
+                    .strikethrough{
+                        text-decoration: line-through;
+                        opacity: 0.5;
+                    }
+
+                    li{
+                        margin: 8px 0;
+                        border: 1px solid $secondcolor;
+                        padding: 4px 8px;
+                        transition: all 0.4s ease;
+
+                        &:hover{
+                            background-color: $secondcolor;
+                            color: $firstcolor;
+                        }
+                    }
+                }
+            }
+
+        }
+
+        .section-right{
+            background-color: $secondcolor;
+
+            .add-item-wrapper{
+                
+                .add-item{
+                    background-color: $secondcolor;
+                    transition: background-color 0.5s ease-in-out;
+                    background-image: url(../img/tea.svg);
+                    background-position: 30%;
+                    background-size: cover;
+
+                    .item-text{
+                        color: black;
+                        font-weight: bolder;
+                    }
+                }
+                .item-text-changed{
+                    background-color: rgb(154, 157, 168);
+                    transition: background-color 0.5s ease-in-out;
+                }
+            }
+            .item-list-wrapper{
+                .item-list{
+                    color: $firstcolor;
+
+                    li{
+                        border: 1px solid $firstcolor;
+
+                        &:hover{
+                            background-color: $firstcolor;
+                            color: $secondcolor;
+                        }
+                    }
+                }
+            }
+        }   
+    }
+}
+
+
